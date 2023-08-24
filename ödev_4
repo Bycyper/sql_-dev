@@ -1,0 +1,14 @@
+soru1=film tablosunda bulunan replacement_cost sütununda bulunan birbirinden farklı değerleri sıralayınız.
+soru2=film tablosunda bulunan replacement_cost sütununda birbirinden farklı kaç tane veri vardır?
+soru3=film tablosunda bulunan film isimlerinde (title) kaç tanesini T karakteri ile başlar ve aynı zamanda rating 'G' ye eşittir?
+soru4=country tablosunda bulunan ülke isimlerinden (country) kaç tanesi 5 karakterden oluşmaktadır?
+soru5=city tablosundaki şehir isimlerinin kaç tanesi 'R' veya r karakteri ile biter?
+
+cevap1=select distinct(replacement_cost) from film
+cevap2=select count (distinct(replacement_cost))from film
+cevap3=select COUNT(*) FROM film
+Where title like 'T%' and rating='G'
+cevap4=select COUNT(*) FROM country
+Where country like '_____'
+cevap5=select COUNT(*) FROM city
+Where city Ilike '%r'
