@@ -1,0 +1,25 @@
+test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
+Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
+Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
+
+cevap2=CREATE TABLE employee(
+id integer,
+name VARCHAR(50),
+birtday DATE,
+email VARCHAR(100))
+
+cevap2=insert into employee (name, email, birtday) values ('Phillip', 'pclaibourn0@last.fm', '2023-03-28');
+insert into employee (name, email, birtday) values ('Jacky', 'jburnsyde1@sogou.com', '2023-04-16');
+insert into employee (name, email, birtday) values ('Judith', 'jtulleth2@amazon.co.uk', '2023-08-15');
+(ÖRNEK OLARAK 3 TANE BIRAKTIM HEPSİNİ YAZMAK ÇOK YER KAPLAR)
+
+Cevap3=UPDATE employee
+SET name='ödev yapıldı',
+birtday='01-01-01',
+email='ödevyapıldı@baba.com';
+(Where koşulunu yazmadım ilk başta tüm veri değişti :d)
+
+cevap4=DELETE FROM employee 
+Where name ='ödev yapıldı'
+(Tüm tabloyu sildim yeni tablo yaratmak için )
