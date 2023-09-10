@@ -16,9 +16,11 @@ Group by rating
 order by Count(*) DESC
 LIMIT 1
 
-cevap3=Select first_name,last_name,payment.amount from customer
-inner join payment on customer.customer_id=payment.customer_id
-Where amount= (Select Max(amount)from payment)
+cevap3=Select SUM(amount),customer.first_name,customer.last_name,payment.customer_id from payment
+inner join customer on customer.customer_id=payment.customer_id
+group by customer.first_name,customer.last_name,payment.customer_id
+order by  SUM(amount) desc
+limit 1
 
 
 cevap4=Select count(*),category. name from category
