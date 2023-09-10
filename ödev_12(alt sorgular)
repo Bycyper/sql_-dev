@@ -1,0 +1,26 @@
+
+film tablosunda film uzunluğu length sütununda gösterilmektedir. Uzunluğu ortalama film uzunluğundan fazla kaç tane film vardır?
+film tablosunda en yüksek rental_rate değerine sahip kaç tane film vardır?
+film tablosunda en düşük rental_rate ve en düşün replacement_cost değerlerine sahip filmleri sıralayınız.
+payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
+
+
+
+cevap1=SELECT Count(*),(Select AVG (LENGTH)FROM FILM) from film
+Where length>(Select AVG (LENGTH)FROM FILM)
+
+cevap2=Select count(*)from film 
+Where rental_rate=(Select
+Max(rental_rate)from film)
+
+cevap3=Select *from film
+Where rental_rate =(Select
+Min(rental_rate)from film) and replacement_cost =(Select Min(replacement_cost )from film)
+
+cevap4=SELECT * FROM payment
+Where amount=(Select Max(amount)from payment) bu sadece max değerleri verir.
+
+SELECT payment.payment_id, payment.customer_id, payment.amount, customer.first_name, customer.last_name
+FROM payment
+INNER JOIN customer ON payment.customer_id = customer.customer_id
+WHERE amount = (SELECT MAX(amount) FROM payment);  . Bu da customer bilgilerinide içerir bu sorgu daha iyi bence.
