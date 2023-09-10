@@ -1,0 +1,30 @@
+film tablosundan 'K' karakteri ile başlayan en uzun ve replacenet_cost u en düşük 4 filmi sıralayınız.
+film tablosunda içerisinden en fazla sayıda film bulunduran rating kategorisi hangisidir?
+cutomer tablosunda en çok alışveriş yapan müşterinin adı nedir?
+category tablosundan kategori isimlerini ve kategori başına düşen film sayılarını sıralayınız.
+film tablosunda isminde en az 4 adet 'e' veya 'E' karakteri bulunan kç tane film vardır?
+
+
+cevap1=SELECT *
+FROM film
+WHERE title LIKE 'K%'
+ORDER BY length DESC, replacement_cost ASC
+LIMIT 4;
+
+cevap2=Select Count(*),rating from film
+Group by rating
+order by Count(*) DESC
+LIMIT 1
+
+cevap3=Select first_name,last_name,payment.amount from customer
+inner join payment on customer.customer_id=payment.customer_id
+Where amount= (Select Max(amount)from payment)
+
+
+cevap4=Select count(*),category. name from category
+join film_category ON film_category.category_id=category.category_id
+join film ON film.film_id=film_category.film_id
+group by category.name
+
+cevap5=Select count (*) from film
+Where title ILIKE '%E%E%E%E%'
